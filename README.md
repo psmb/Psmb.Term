@@ -1,6 +1,6 @@
 
 This package will help you to automatically link all occurrences of
-your term words within given text. Great for SEO and stuff.
+your terms within given text. Great for SEO and stuff.
 
 ## Usage
 
@@ -30,4 +30,6 @@ prototype(TYPO3.Neos.NodeTypes:Text) {
 
 ### 4. Create term nodes
 
-You may also fill-in their `replaceVariants` property for alternative spelling variants
+You may also fill-in their `replaceVariants` property for alternative spelling
+variants, separated by comma, supporting regexp, "+" expands into "\w*?".
+E.g. `duck+` matches `duck`, `ducks`, `ducklings` etc.
