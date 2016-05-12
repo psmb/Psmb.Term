@@ -1,0 +1,19 @@
+{
+    "description": "Replace occurrences of terms with links to them",
+    "type": "neos-package",
+    "require": {
+        "typo3/flow": "*"
+    },
+    "license": "MIT",
+    "name": "psmb/term",
+    "autoload": {
+        "psr-0": {
+            "Psmb\\Term": "Classes/"
+        }
+    },
+    "extra": {
+        "neos": {
+            "package-key": "Psmb.Term"
+        }
+    }
+}
