@@ -3,3 +3,7 @@ TYPO3:
     typoScript:
       autoInclude:
         'Psmb.Term': TRUE
+    userInterface:
+      translation:
+        autoInclude:
+          'Psmb.Term': ['NodeTypes/*']

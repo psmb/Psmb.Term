@@ -2,13 +2,13 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
 	<file original="" product-name="Psmb.Term" source-language="en" datatype="plaintext">
 		<body>
-			<trans-unit id="groups.term" xml:space="preserve">
+			<trans-unit xml:lang="ru" id="groups.term" xml:space="preserve">
 				<source>Terms</source>
 			</trans-unit>
-			<trans-unit id="properties.replaceVariants" xml:space="preserve">
+			<trans-unit xml:lang="ru" id="properties.replaceVariants" xml:space="preserve">
 				<source>Spelling variants</source>
 			</trans-unit>
-			<trans-unit id="properties.replaceVariants.ui.help.message" xml:space="preserve">
+			<trans-unit xml:lang="ru" id="properties.replaceVariants.ui.help.message" xml:space="preserve">
 				<source>Spelling variants, separated by comma, supporting regexp, "|" expands into "\w*?"</source>
 				<source>Варианты разделяются запятой, поддерживают regexp, "|" отделяет изменяемую часть. Примеры: "Дмитри+ (Сергеевич+)? Гасак+", "(священник+|о.|отец|отц+)? Георги+ Кочетков+"</source>
 			</trans-unit>
