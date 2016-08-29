@@ -41,20 +41,21 @@ class ReplaceTermsImplementation extends AbstractTypoScriptObject {
 		}
 		$linkingService = $this->linkingService;
 		$controllerContext = $this->tsRuntime->getControllerContext();
-
 		foreach ($terms as $term) {
 			if ($term->getProperty('replaceVariants') && ($term != $documentNode)) {
 				$replacementVariants = explode(',', $term->getProperty('replaceVariants'));
 				foreach ($replacementVariants as $replacementVariant) {
 					$replacementVariant = trim($replacementVariant);
-					// Define "plus" as a specila symbol to mark word base
-					$replacementVariant = str_replace('+', '\w*?', $replacementVariant);
-					// Match any number of spaces
-					$replacementVariant = str_replace(' ', '\s*', $replacementVariant);
-					if (preg_match('/' . $replacementVariant . '/ui', $text) !== false) {
-						$termUri = $linkingService->createNodeUri($controllerContext, $term);
-						// Match not within links
-						$text = preg_replace('/(?!(?:[^<]+>|[^>]+<\/a>))\b(' . $replacementVariant . ')\b/ui', '<a href="' . $termUri . '">$1</a>', $text);
+					if ($replacementVariant) {
+						// Define "plus" as a specila symbol to mark word base
+						$replacementVariant = str_replace('+', '\w*?', $replacementVariant);
+						// Match any number of spaces
+						$replacementVariant = str_replace(' ', '\s*', $replacementVariant);
+						if (preg_match('/' . $replacementVariant . '/ui', $text)) {
+							$termUri = $linkingService->createNodeUri($controllerContext, $term);
+							// Match not within links
+							$text = preg_replace('/(?!(?:[^<]+>|[^>]+<\/a>))\b(' . $replacementVariant . ')\b/ui', '<a href="' . $termUri . '">$1</a>', $text);
+						}
 					}
 				}
 			}
