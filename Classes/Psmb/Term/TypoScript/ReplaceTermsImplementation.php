@@ -29,6 +29,7 @@ class ReplaceTermsImplementation extends AbstractTypoScriptObject {
 		$terms = $this->tsValue('terms');
 		$text = $this->tsValue('value');
 		$node = $this->tsValue('node');
+		$absolute = $this->tsValue('absolute') ? true : false;
 		$documentNode = $this->tsValue('documentNode');
 		if ($text === '' || $text === NULL) {
 			return '';
@@ -52,7 +53,7 @@ class ReplaceTermsImplementation extends AbstractTypoScriptObject {
 						// Match any number of spaces
 						$replacementVariant = str_replace(' ', '\s*', $replacementVariant);
 						if (preg_match('/' . $replacementVariant . '/ui', $text)) {
-							$termUri = $linkingService->createNodeUri($controllerContext, $term);
+							$termUri = $linkingService->createNodeUri($controllerContext, $term, null, null, $absolute);
 							// Match not within links
 							$text = preg_replace('/(?!(?:[^<]+>|[^>]+<\/a>))\b(' . $replacementVariant . ')\b/ui', '<a href="' . $termUri . '">$1</a>', $text);
 						}

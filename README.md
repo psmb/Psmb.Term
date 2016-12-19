@@ -28,6 +28,8 @@ prototype(TYPO3.Neos.NodeTypes:Text) {
 }
 ```
 
+Processor has option `absolute` which would force creation of absolute uris.
+
 ### 4. Create term nodes
 
 You may also fill-in their `replaceVariants` property for alternative spelling
