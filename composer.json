@@ -7,8 +7,8 @@
     "license": "MIT",
     "name": "psmb/term",
     "autoload": {
-        "psr-0": {
-            "Psmb\\Term": "Classes/"
+        "psr-4": {
+            "Psmb\\Term\\": "Classes"
         }
     },
     "extra": {
