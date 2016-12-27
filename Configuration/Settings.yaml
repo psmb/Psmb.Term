@@ -1,9 +1,11 @@
-TYPO3:
+
+Neos:
   Neos:
     typoScript:
       autoInclude:
-        'Psmb.Term': TRUE
+        Psmb.Term: true
     userInterface:
       translation:
         autoInclude:
-          'Psmb.Term': ['NodeTypes/*']
+          Psmb.Term:
+            - 'NodeTypes/*'

@@ -16,6 +16,6 @@
         reloadIfChanged: FALSE
         inspector:
           group: 'term'
-          editor: 'TYPO3.Neos/Inspector/Editors/TextAreaEditor'
+          editor: 'Neos.Neos/Inspector/Editors/TextAreaEditor'
           editorOptions:
             rows: 7
