@@ -1,11 +1,11 @@
 
 Neos:
   Neos:
-    typoScript:
-      autoInclude:
-        Psmb.Term: true
     userInterface:
       translation:
         autoInclude:
           Psmb.Term:
             - 'NodeTypes/*'
+    fusion:
+      autoInclude:
+        Psmb.Term: true
