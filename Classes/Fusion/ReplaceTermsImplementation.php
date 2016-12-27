@@ -1,16 +1,16 @@
 <?php
-namespace Psmb\Term\TypoScript;
+namespace Psmb\Term\Fusion;
 
 use Neos\Flow\Annotations as Flow;
 use Neos\Neos\Domain\Exception;
 use Neos\Neos\Service\LinkingService;
 use Neos\ContentRepository\Domain\Model\NodeInterface;
-use Neos\Fusion\TypoScriptObjects\AbstractTypoScriptObject;
+use Neos\Fusion\FusionObjects\AbstractFusionObject;
 
 /**
- * A TypoScript Object that automatically creates links to term pages
+ * A Fusion Object that automatically creates links to term pages
  */
-class ReplaceTermsImplementation extends AbstractTypoScriptObject {
+class ReplaceTermsImplementation extends AbstractFusionObject {
 
 	/**
 	 * @Flow\Inject
