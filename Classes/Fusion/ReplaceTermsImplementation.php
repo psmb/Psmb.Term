@@ -26,11 +26,11 @@ class ReplaceTermsImplementation extends AbstractFusionObject {
 	 * @throws Exception
 	 */
 	public function evaluate() {
-		$terms = $this->tsValue('terms');
-		$text = $this->tsValue('value');
-		$node = $this->tsValue('node');
-		$absolute = $this->tsValue('absolute') ? true : false;
-		$documentNode = $this->tsValue('documentNode');
+		$terms = $this->fusionValue('terms');
+		$text = $this->fusionValue('value');
+		$node = $this->fusionValue('node');
+		$absolute = $this->fusionValue('absolute') ? true : false;
+		$documentNode = $this->fusionValue('documentNode');
 		if ($text === '' || $text === NULL) {
 			return '';
 		}
@@ -41,7 +41,7 @@ class ReplaceTermsImplementation extends AbstractFusionObject {
 			return $text;
 		}
 		$linkingService = $this->linkingService;
-		$controllerContext = $this->tsRuntime->getControllerContext();
+		$controllerContext = $this->runtime->getControllerContext();
 		foreach ($terms as $term) {
 			if ($term->getProperty('replaceVariants') && ($term != $documentNode)) {
 				$replacementVariants = explode(',', $term->getProperty('replaceVariants'));
