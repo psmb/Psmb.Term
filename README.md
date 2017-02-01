@@ -23,7 +23,7 @@ composer require psmb/term
 E.g. if you want terms to be replaced in all Text nodes:
 
 ```
-prototype(TYPO3.Neos.NodeTypes:Text) {
+prototype(Neos.Neos.NodeTypes:Text) {
 	text.@process.replaceTags = Psmb.Term:ReplaceTerms
 }
 ```
