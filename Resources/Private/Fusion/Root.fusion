@@ -1,5 +1,5 @@
 prototype(Psmb.Term:ReplaceTerms) {
-	@class = 'Psmb\\Term\\TypoScript\\ReplaceTermsImplementation'
+	@class = 'Psmb\\Term\\Fusion\\ReplaceTermsImplementation'
 	value = ${value}
 	node = ${node}
 	documentNode = ${documentNode}
