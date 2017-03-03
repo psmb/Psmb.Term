@@ -48,6 +48,14 @@ class ReplaceTermsImplementation extends AbstractFusionObject {
 				foreach ($replacementVariants as $replacementVariant) {
 					$replacementVariant = trim($replacementVariant);
 					if ($replacementVariant) {
+						// Escape .
+						$replacementVariant = str_replace('.', '\.', $replacementVariant);
+						// Escape ()
+						$replacementVariant = str_replace('(', '\(', $replacementVariant);
+						$replacementVariant = str_replace(')', '\)', $replacementVariant);
+						// Turn [] into ()
+						$replacementVariant = str_replace('[', '(', $replacementVariant);
+						$replacementVariant = str_replace(']', ')', $replacementVariant);
 						// Define "plus" as a specila symbol to mark word base
 						$replacementVariant = str_replace('+', '\w*?', $replacementVariant);
 						// Match any number of spaces
@@ -55,7 +63,18 @@ class ReplaceTermsImplementation extends AbstractFusionObject {
 						if (preg_match('/' . $replacementVariant . '/ui', $text)) {
 							$termUri = $linkingService->createNodeUri($controllerContext, $term, null, null, $absolute);
 							// Match not within links
-							$text = preg_replace('/(?!(?:[^<]+>|[^>]+<\/a>))\b(' . $replacementVariant . ')\b/ui', '<a href="' . $termUri . '">$1</a>', $text);
+							$text = preg_replace(
+								'/
+									(?<!\w)(?=[\w\(])
+										(' . $replacementVariant . ')
+									(?<=[\w\)])(?!\w)
+									(?!
+										[^<]*<\/a>
+									)
+								/xmui',
+								'<a href="' . $termUri . '">$1</a>',
+								$text
+							);
 						}
 					}
 				}
