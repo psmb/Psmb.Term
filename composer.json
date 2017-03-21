@@ -2,7 +2,7 @@
     "description": "Replace occurrences of terms with links to them",
     "type": "neos-package",
     "require": {
-        "typo3/flow": "*"
+        "neos/flow": "^4.0"
     },
     "license": "MIT",
     "name": "psmb/term",
