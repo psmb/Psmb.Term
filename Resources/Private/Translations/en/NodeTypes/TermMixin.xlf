@@ -10,7 +10,6 @@
 			</trans-unit>
 			<trans-unit xml:lang="ru" id="properties.replaceVariants.ui.help.message" xml:space="preserve">
 				<source>Spelling variants, separated by comma, supporting regexp, "[]" turn into "()", "+" expands into "\w*?"</source>
-				<source>Варианты разделяются запятой, поддерживают regexp, "+" отделяет изменяемую часть, "[вариант1|вариант2]". Примеры: "Дмитри+ [Сергеевич+]? Гасак+", "[священник+|о.|отец|отц+]? Георги+ Кочетков+"</source>
 			</trans-unit>
 		</body>
 	</file>
